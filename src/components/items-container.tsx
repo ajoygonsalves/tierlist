@@ -48,17 +48,22 @@ export function ItemsContainer() {
             id={container.id}
             className="flex flex-row gap-2 p-4 bg-slate-300 rounded-xl"
           >
+            {container.id !== "all-items" ? (
+              <Item title={`Tier ${index}`} />
+            ) : null}
             {getItemsForContainer(container.id).map((itemId) => {
               const item = allItems.find((item) => item.id === itemId);
               return item ? ( // Ensure item is not undefined
-                <SortableItem
-                  key={item.id}
-                  id={item.id}
-                  containerId={item.containerId}
-                >
-                  <Item title={item.title} />
-                </SortableItem>
-              ) : null; // Return null if item is not found
+                <>
+                  <SortableItem
+                    key={item.id}
+                    id={item.id}
+                    containerId={item.containerId}
+                  >
+                    <Item title={item.title} />
+                  </SortableItem>
+                </>
+              ) : null;
             })}
           </Droppable>
         </SortableContext>

@@ -19,12 +19,18 @@ const initialItems: ItemType[] = [
   { id: "item-3", title: "Item 3", containerId: "all-items" },
   { id: "item-4", title: "Item 4", containerId: "tier-1" },
   { id: "item-5", title: "Item 5", containerId: "tier-1" },
-  { id: "item-6", title: "Item 6", containerId: "tier-1" },
+  { id: "item-6", title: "Item 7", containerId: "tier-1" },
+  { id: "item-7", title: "Item 8", containerId: "tier-2" },
+  { id: "item-8", title: "Item 9", containerId: "tier-3" },
+  { id: "item-9", title: "Item 10", containerId: "tier-4" },
 ];
 
 const initialContainers: ContainerType[] = [
   { id: "all-items", name: "All Items" },
   { id: "tier-1", name: "Tier 1" },
+  { id: "tier-2", name: "Tier 2" },
+  { id: "tier-3", name: "Tier 3" },
+  { id: "tier-4", name: "Tier 4" },
 ];
 
 const useAllItemsStore = create<AllItemsState>()((set) => ({
